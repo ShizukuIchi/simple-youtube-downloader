@@ -1,5 +1,8 @@
 ## Simple-Youtube-Downloader
 
+> Python 3.6.3 with requests
+
+
 To download a video from youtube:
 
 ```python
