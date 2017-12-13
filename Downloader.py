@@ -16,8 +16,8 @@ else:
     print('no config found')
     sys.exit()
 
-# Take off '/' from video name      
-title = j['args']['title'].replace('/', '')
+# Take off reserved characters from video name      
+title = re.sub(r'[:<>"\\\/\|\?\*]', '',j['args']['title'])
 qs = parse_qs(j['args']['url_encoded_fmt_stream_map'])
 res = requests.get(qs['url'][0])
 if res.status_code == 200:
